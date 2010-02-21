@@ -19,11 +19,13 @@ class Gem::Commands::FakeCommand < Gem::Command
   end
 
   def usage # :nodoc:
-    "#{program_name} GEMNAME"
+    "#{program_name} GEMNAME [GEMNAME ...]"
   end
 
   def execute
-    FakeGem.new(options[:args].first, options).install
+    options[:args].each do |gemname|
+      FakeGem.new(gemname, options).install
+    end
   end
 end
 
