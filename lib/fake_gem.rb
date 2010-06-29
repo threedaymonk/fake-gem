@@ -4,6 +4,7 @@ require "rubygems/installer"
 
 class FakeGem
   DEFAULT_VERSION = "99.0.0"
+  SUMMARY = "Make RubyGems think that a gem is already installed."
 
   include Gem::UserInteraction
 
